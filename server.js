@@ -17,7 +17,11 @@ const app = express()
 // Mount routes
 
 app.get('/', function (req,res) {
-  res.send('<h1>hello, friends!</h1>')
+  res.send('<h1>Student Directory - Home</h1>')
+}
+)
+app.get('/foods', function (req,res) {
+  res.send('<h1>Student Directory - foods</h1>')
 })
 
 
