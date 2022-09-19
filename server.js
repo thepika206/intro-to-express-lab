@@ -8,7 +8,7 @@ const app = express()
 
 // Configure the app (app.set)
 
-
+app.set('view engine', 'ejs')
 
 // Mount Middleware (app.use)
 
@@ -22,6 +22,10 @@ app.get('/', function (req,res) {
 )
 app.get('/foods', function (req,res) {
   res.send('<h1>Student Directory - foods</h1>')
+})
+
+app.get('/home', function (req,res){
+  res.render('home')
 })
 
 
