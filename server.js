@@ -2,6 +2,7 @@
 
 import express from 'express'
 
+import { students } from './data/student-data.js'
 // Create Express app
 
 const app = express()
@@ -17,11 +18,13 @@ app.set('view engine', 'ejs')
 // Mount routes
 
 app.get('/', function (req,res) {
-  res.send('<h1>Student Directory - Home</h1>')
+  res.redirect('/home')
 }
 )
-app.get('/foods', function (req,res) {
-  res.send('<h1>Student Directory - foods</h1>')
+app.get('/students', function (req,res) {
+  res.render('students/index', {
+    students: students
+  })
 })
 
 app.get('/home', function (req,res){
